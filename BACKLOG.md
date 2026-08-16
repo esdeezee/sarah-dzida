@@ -2,6 +2,19 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-16.
 
+## 2026-08-16 — READ FIRST: VSCode in-editor preview is still broken, don't re-attempt blind
+
+Asked and answered wrong five times in a row this session — full honest account in `PROGRESS.md` under "session, part 3." Don't repeat the pattern of guessing another variant.
+
+**What's actually confirmed working (verified, not assumed):**
+- `sarahdzida.com` is live, styled correctly, confirmed by Sarah's own eyes.
+- The root-absolute-path bug that broke styling on the temporary GitHub URL is fixed at the code level (works at any hosting depth now, verified against real `page.url` values, not guesses).
+- The recurring terminal `bundle: command not found` error is fixed — `rbenv` is now wired into `~/.zshrc`. Sarah's own terminal screenshot confirmed `jekyll serve --livereload` starting clean, no error, for the first time this session.
+
+**What's NOT fixed:** getting a real rendered preview to show up *inside VSCode*. Three things were tried (Simple Browser, a plain fallback browser tab, a `.vscode/tasks.json` auto-start task) — none were confirmed working with Sarah watching, and the tasks.json attempt was removed rather than left in an unverified state.
+
+**Before touching this again:** first establish, with Sarah present, whether VSCode's Simple Browser feature (Command Palette → "Simple Browser: Show") even works in her installation — that was never actually confirmed either way, just assumed. If it doesn't, don't keep trying VSCode-specific approaches — fall back to the version with zero unknowns: `bundle exec jekyll serve --livereload` in a terminal (now works, confirmed), viewed in her regular browser (Safari/Chrome) at `http://127.0.0.1:4000`, no VSCode integration at all. Confirm that baseline actually works for her before attempting any in-editor convenience layer again.
+
 ## 2026-08-16 — RESOLVED: live on the real domain, two bugs found and fixed along the way
 
 All 3 action items from the "READ FIRST NEXT SESSION" entry below are done — that entry is now historical, kept for the trail but superseded by this one.
@@ -15,7 +28,7 @@ All 3 action items from the "READ FIRST NEXT SESSION" entry below are done — t
 
 **Loose end, not blocking:** a `sarah` A record in the DNS zone pointing to `172.66.0.70` — not a GitHub Pages IP, origin unexplained, spotted while debugging the domain conflict. Worth a look whenever you're in that DNS panel next, no urgency.
 
-**New open item:** VSCode's Live Preview extension still can't render the compiled Jekyll output directly (it's a static file server with no Liquid/front-matter awareness — the workaround is `bundle exec jekyll serve --livereload` in a separate browser tab, not an in-editor preview). You want an actual fix for the in-editor workflow — in progress via the other Claude session.
+**VSCode in-editor preview:** still open — see the entry above this one, which supersedes this note with the full, honest account of what was and wasn't actually fixed.
 
 ## 2026-08-16 — READ FIRST NEXT SESSION (historical, fully resolved above)
 
