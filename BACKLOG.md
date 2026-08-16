@@ -2,7 +2,22 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-16.
 
-## 2026-08-16 — READ FIRST NEXT SESSION
+## 2026-08-16 — RESOLVED: live on the real domain, two bugs found and fixed along the way
+
+All 3 action items from the "READ FIRST NEXT SESSION" entry below are done — that entry is now historical, kept for the trail but superseded by this one.
+
+**What happened, in order:**
+- Sanity-checked the 6 local Jekyll commits (`bundle exec jekyll build` clean, all 8 pages verified, zero Liquid/front-matter leakage), then pushed to `origin/main`.
+- Found and fixed an incidental bug while verifying: the `github-pages` gem silently defaults to `jekyll-theme-primer` unless `theme:` is explicitly set, compiling an unused ~136KB `assets/css/style.css` into every build. Added `theme: null` to `_config.yml` — flagged before fixing since it touched a config file, you said go ahead.
+- Confirmed the push rendered correctly on `esdeezee.github.io/sarah-dzida` — pages loaded, but **you caught by eye that the site was completely unstyled**, which a bare HTTP-200 check had missed. Root cause: the shared layout/includes use root-absolute paths (`/css/style.css`, `/images/...`, `/work/...`) — correct only if the site lives at a domain root, which the temporary `github.io/sarah-dzida` project-page URL is not. Every asset and nav link was 404ing one level too high.
+- That pointed straight at getting the real domain live. Hit a GitHub-side snag: `sarahdzida.com` came back "already taken" when added as this repo's custom domain — a stale claim, most likely left over from `sarah-strategic` briefly using the same domain (Jul 23–27) before moving to `sarahstrategic.com`. Fixed via GitHub's account-level domain verification (Settings → Pages → Add a domain → TXT record) — nothing in this repo needed to change.
+- `sarahdzida.com` is now live, HTTPS issued, and you've confirmed by eye that it renders styled correctly. The path bug fixed itself once the domain matched what the paths assumed.
+
+**Loose end, not blocking:** a `sarah` A record in the DNS zone pointing to `172.66.0.70` — not a GitHub Pages IP, origin unexplained, spotted while debugging the domain conflict. Worth a look whenever you're in that DNS panel next, no urgency.
+
+**New open item:** VSCode's Live Preview extension still can't render the compiled Jekyll output directly (it's a static file server with no Liquid/front-matter awareness — the workaround is `bundle exec jekyll serve --livereload` in a separate browser tab, not an in-editor preview). You want an actual fix for the in-editor workflow — in progress via the other Claude session.
+
+## 2026-08-16 — READ FIRST NEXT SESSION (historical, fully resolved above)
 
 Everything in this entry comes from a separate Claude Code session (working with Sarah directly, on a different project that shares this site's design lineage) that picked up the 2026-08-15 "did it work" question while this project's own session was idle. Not this session's own memory — written up here so it doesn't have to be re-derived or re-verified from scratch.
 
