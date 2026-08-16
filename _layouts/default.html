@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ page.title }}</title>
+{% assign depth = page.url | split: '/' | size | minus: 2 | at_least: 0 %}
+{% assign rel = '' %}
+{% for i in (1..depth) %}{% assign rel = rel | append: '../' %}{% endfor %}
 <meta name="description" content="{{ page.description }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ page.title }}">
@@ -11,14 +14,14 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.description }}">
-<link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/images/Logo/SD-Logo-Black.png">
-<link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/images/Logo/SD-Logo-White.png">
-<link rel="stylesheet" href="/css/style.css">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="{{ rel }}images/Logo/SD-Logo-Black.png">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="{{ rel }}images/Logo/SD-Logo-White.png">
+<link rel="stylesheet" href="{{ rel }}css/style.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 
-{% include header.html %}
+{% include header.html rel=rel %}
 
 <main id="main">
 {{ content }}
@@ -26,7 +29,7 @@
 
 {% include footer.html %}
 {% if page.scripts %}{% for script in page.scripts %}
-<script src="{{ script }}" defer></script>
+<script src="{{ rel }}{{ script | remove_first: '/' }}" defer></script>
 {% endfor %}{% endif %}
 </body>
 </html>

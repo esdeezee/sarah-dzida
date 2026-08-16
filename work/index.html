@@ -13,7 +13,7 @@ permalink: /work/index.html
 
     <div class="work-grid">
       {% for study in site.case_studies %}
-      <a class="work-tile" href="{{ study.url }}">
+      <a class="work-tile" href="{{ study.url | remove_first: '/work/' }}">
         {% if study.tile_thumb_video %}
         <video class="work-tile__thumb" autoplay muted loop playsinline poster="{{ study.tile_thumb_poster }}">
           <source src="{{ study.tile_thumb_video }}" type="video/mp4">
