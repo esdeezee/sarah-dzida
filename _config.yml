@@ -1,0 +1,25 @@
+title: Sarah Dzida
+description: "Sarah Dzida is a UX, product, and strategy consultant, and a writer."
+
+collections:
+  case_studies:
+    output: true
+    permalink: /work/:name.html
+
+defaults:
+  - scope:
+      path: ""
+      type: "case_studies"
+    values:
+      layout: case-study
+      nav: work
+
+exclude:
+  - reference
+  - Fonts/Lato
+  - Fonts/Prata
+  - BACKLOG.md
+  - PROGRESS.md
+  - CLAUDE.md
+  - README.md
+  - .gitignore

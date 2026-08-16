@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page.title }}</title>
+<meta name="description" content="{{ page.description }}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{ page.title }}">
+<meta property="og:description" content="{{ page.description }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ page.title }}">
+<meta name="twitter:description" content="{{ page.description }}">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="/images/Logo/SD-Logo-Black.png">
+<link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="/images/Logo/SD-Logo-White.png">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+{% include header.html %}
+
+<main id="main">
+{{ content }}
+</main>
+
+{% include footer.html %}
+{% if page.scripts %}{% for script in page.scripts %}
+<script src="{{ script }}" defer></script>
+{% endfor %}{% endif %}
+</body>
+</html>
