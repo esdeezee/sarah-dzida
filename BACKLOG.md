@@ -2,6 +2,26 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-16.
 
+## 2026-08-16 — READ FIRST NEXT SESSION
+
+Everything in this entry comes from a separate Claude Code session (working with Sarah directly, on a different project that shares this site's design lineage) that picked up the 2026-08-15 "did it work" question while this project's own session was idle. Not this session's own memory — written up here so it doesn't have to be re-derived or re-verified from scratch.
+
+**Where things stand, verified fact, not carried-over uncertainty:**
+- The Jekyll restructuring from 2026-08-15 is sound. `bundle exec jekyll build` compiles cleanly, all 8 pages generated at their correct existing URLs, zero unrendered Liquid/front-matter in the output. See the 2026-08-16 entry below and `PROGRESS.md` for the full verification and the actual root cause of "it didn't work" (a preview-tool mismatch, not a build defect). **Do not re-diagnose this — it's closed.**
+- `main` currently sits **5 commits ahead of `origin/main`, none pushed**: a `.gitignore` fix, the Jekyll toolchain/layout scaffolding, the case-study collection conversion, the remaining-pages conversion, and the doc corrections referenced above. `git log --oneline -6` to see them. Nothing has gone live yet.
+- `esdeezee/sarah-dzida` is this project's correct, permanent GitHub repo — no ambiguity there, don't second-guess it. (Separately, and unrelated to this project: the repo was briefly, and unknowingly, shared with a different project's site, which broke that other site. That's been fully resolved on the other project's end and required no changes here — mentioned only so it doesn't look mysterious if Sarah brings it up.)
+
+**What to actually do, in order:**
+1. Sanity-check the 5 local commits yourself — `bundle exec jekyll build` and a spot-check of `_site/` output — before trusting them, same as you'd want for any work you didn't personally watch happen.
+2. Push to `origin/main`.
+3. Confirm the live site (GitHub Pages) actually renders correctly post-push — don't assume the local build result guarantees the deployed result.
+4. **Then, and only then**, pick up real feature work. The natural first task: add one new case study end-to-end, using the `_case_studies/` collection. This is the actual test of whether the Jekyll conversion delivers what it was built for — confirm with Sarah before starting whether she has a real one ready or wants a placeholder test run.
+
+**Standing rules, going forward, given what caused the 2026-08-15 session to end badly:**
+- No new tooling, dependencies, or environment changes without asking first — regardless of how clearly correct they seem in the moment.
+- One page/file/change at a time when doing anything structural, confirmed working before starting the next — never convert everything in one pass again.
+- Local preview: `bundle exec jekyll serve --livereload`, and use the URL it prints. Never point a static file server (VSCode Live Preview included) at raw source containing front matter or Liquid tags — it will always show broken-looking raw template text, regardless of whether the underlying conversion is correct.
+
 ## 2026-08-15 — resolved this session
 
 Footer LinkedIn icon hover, Mila Thomsen credit link, KidHQ press links (real URLs, Extreme Reach removed), footer email inconsistency (unified to `sarah@sarahdzida.com`), See Lexus hero video vs. static (went with video). Full detail in `PROGRESS.md`.
