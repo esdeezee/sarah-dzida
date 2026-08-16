@@ -1,10 +1,18 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-15.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-16.
 
 ## 2026-08-15 — resolved this session
 
 Footer LinkedIn icon hover, Mila Thomsen credit link, KidHQ press links (real URLs, Extreme Reach removed), footer email inconsistency (unified to `sarah@sarahdzida.com`), See Lexus hero video vs. static (went with video). Full detail in `PROGRESS.md`.
+
+## 2026-08-16 — RESOLVED: the 2026-08-15 "Jekyll didn't work" blocker was a preview-tool mismatch, not a build defect
+
+Previously flagged here as blocking, read-first, do-not-trust. That was wrong to leave unresolved this long — full account in `PROGRESS.md` under "2026-08-16 session — Jekyll build independently verified working." Short version: a separate Claude Code session, working from Sarah directly (not from this session's own account of itself), ran `bundle exec jekyll build` against the exact uncommitted Jekyll restructuring from 2026-08-15 and confirmed it compiles cleanly — all 8 pages generated, all 4 case studies at their correct existing URLs, zero unrendered Liquid/front-matter leakage anywhere in the output.
+
+What actually happened on 2026-08-15: Sarah was viewing the raw, uncompiled source files (the ones still containing `--- front matter ---` and `{% liquid tags %}`) through VSCode's Live Preview extension on `127.0.0.1:3000` — a plain static file server with no knowledge of Jekyll or Liquid. It rendered the literal template source as visible page text, which is expected behavior for that tool pointed at that kind of file, not a sign the Jekyll conversion failed. The session's own answer at the time — "that's just what happens with Jekyll" — was accurate but incomplete: it didn't identify the wrong-server cause or hand her a fix, which is why the session ended without a path forward.
+
+**Do not re-litigate this.** The Jekyll restructuring is sound. Going forward, preview this site locally with `bundle exec jekyll serve --livereload` (compiled output, auto-refreshing) — never by pointing a static file server at the raw `_layouts`/`_includes`/`_case_studies` source.
 
 ## 2026-08-15 — still open
 
