@@ -535,10 +535,16 @@ ul {
   background: var(--color-teal);
 }
 .testimonial--coral {
-  background: var(--coral-text);
+  background: var(--color-coral);
+  color: var(--color-ink);
 }
 .testimonial--olive {
-  background: var(--olive-text);
+  background: var(--color-olive);
+  color: var(--color-ink);
+}
+.testimonial--coral cite,
+.testimonial--olive cite {
+  opacity: 1;
 }
 .testimonial--yellow {
   background: var(--color-yellow);
