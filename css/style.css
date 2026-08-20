@@ -62,12 +62,13 @@
   --color-hairline: color-mix(in srgb, var(--color-ink) 15%, white);
   --hero-bg: color-mix(in srgb, var(--color-teal) 45%, white);
   --olive-text: #6e7556;
+  --coral-text: #bd4a42;
 
   --font-display: "Raleway", sans-serif;
   --font-body: "Open Sans", sans-serif;
 
-  --container-width: 1160px;
-  --gutter: clamp(20px, 5vw, 64px);
+  --container-width: 1280px;
+  --gutter: clamp(20px, 5.6vw, 80px);
 
   --radius: 6px;
 }
@@ -534,10 +535,10 @@ ul {
   background: var(--color-teal);
 }
 .testimonial--coral {
-  background: var(--color-coral);
+  background: var(--coral-text);
 }
 .testimonial--olive {
-  background: var(--color-olive);
+  background: var(--olive-text);
 }
 .testimonial--yellow {
   background: var(--color-yellow);
@@ -638,8 +639,8 @@ ul {
 }
 
 .about-quote del {
-  color: color-mix(in srgb, var(--color-ink) 45%, white);
-  text-decoration-color: color-mix(in srgb, var(--color-ink) 45%, white);
+  color: color-mix(in srgb, var(--color-ink) 65%, white);
+  text-decoration-color: color-mix(in srgb, var(--color-ink) 65%, white);
 }
 
 .about-quote ins {
@@ -734,10 +735,6 @@ ul {
   min-height: 480px;
   background-size: cover;
   background-position: center;
-}
-
-.case-hero__media--top {
-  background-position: top center;
 }
 
 video.case-hero__media {

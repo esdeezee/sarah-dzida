@@ -14,7 +14,7 @@ layout: default
     <source src="{{ page.hero_video }}" type="video/mp4">
   </video>
   {% else %}
-  <div class="case-hero__media{% if page.hero_position == 'top' %} case-hero__media--top{% endif %}" style="background-image: url('{{ page.hero_image }}');" role="img" aria-label="{{ page.hero_alt }}"></div>
+  <div class="case-hero__media" style="background-image: url('{{ page.hero_image }}');{% if page.hero_position %} background-position: {{ page.hero_position }};{% endif %}" role="img" aria-label="{{ page.hero_alt }}"></div>
   {% endif %}
 </section>
 

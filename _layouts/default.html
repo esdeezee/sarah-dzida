@@ -8,12 +8,16 @@
 {% assign rel = '' %}
 {% for i in (1..depth) %}{% assign rel = rel | append: '../' %}{% endfor %}
 <meta name="description" content="{{ page.description }}">
+<link rel="canonical" href="https://sarahdzida.com{{ page.url }}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ page.title }}">
 <meta property="og:description" content="{{ page.description }}">
-<meta name="twitter:card" content="summary">
+<meta property="og:url" content="https://sarahdzida.com{{ page.url }}">
+<meta property="og:image" content="https://sarahdzida.com/{{ page.og_image | default: 'images/sarah-portrait-2.jpg' }}">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ page.title }}">
 <meta name="twitter:description" content="{{ page.description }}">
+<meta name="twitter:image" content="https://sarahdzida.com/{{ page.og_image | default: 'images/sarah-portrait-2.jpg' }}">
 <link rel="icon" type="image/png" media="(prefers-color-scheme: light)" href="{{ rel }}images/Logo/SD-Logo-Black.png">
 <link rel="icon" type="image/png" media="(prefers-color-scheme: dark)" href="{{ rel }}images/Logo/SD-Logo-White.png">
 <link rel="stylesheet" href="{{ rel }}css/style.css">
