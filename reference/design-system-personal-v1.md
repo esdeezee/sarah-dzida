@@ -33,7 +33,7 @@ Same rules as v4 §1.1: mobile-first, `min-width` queries only, no horizontal sc
 
 **2026-08-20: this doc's original 1280px/80px numbers were correct and shipped CSS had drifted to 1160px/64px** — caught by pixel-measuring the real mockup PNGs directly (content starts exactly 80px in from the canvas edge on every mockup checked, an exact match for the numbers below). Fixed in code. One real, deliberate departure from what this doc originally specified: the gutter is a fluid `clamp()`, not a fixed 80/48/24 stepped at hard breakpoints — that was an earlier build-time decision, kept since it works and no visible bug has ever traced back to it.
 
-**Breakpoints actually in use in the shipped CSS** (not the doc's original `sm 600 / md 900 / lg 1200`): mostly `899px` and `680px`, with a handful of component-specific ones (`599px`, `860px`, `1199px`) where a specific layout needed it. **`[OPEN]`** — whether the doc's original 600/900/1200 tier should replace these, or whether the shipped tier is now the standard, is unverified either way: the mockups are only ever a single 1440px desktop canvas, so nothing in the repo can settle this by measurement the way the container-width question was settled. Needs Sarah's live-browser judgment call, not a guess from either document.
+**Breakpoints actually in use in the shipped CSS** (not the doc's original `sm 600 / md 900 / lg 1200`): mostly `899px` and `680px`, with a handful of component-specific ones (`599px`, `860px`, `1199px`) where a specific layout needed it. **Confirmed 2026-08-20** — Sarah checked every page live at these breakpoints and confirmed it's all correct as shipped. The doc's original 600/900/1200 tier is superseded; the shipped tier is now the standard, not a placeholder.
 
 ## 1.3 Spacing scale `[INHERITED]`
 
@@ -204,12 +204,11 @@ A real, reusable text-treatment component, confirmed by Sarah — not one-off th
 
 # PART 4 — STILL OPEN (Sarah's decisions, not Claude Code's)
 
-**Resolved since v1, shipped, no longer open (2026-08-20 pass):** homepage intro band ground color (§1.4), Choose an Adventure badge colors (§1.4 — turned out to be flat fills, no hidden variant), nav hover/active treatment (§1.8), H1 size/weight (§1.5), Work index rule color (§2.1), Work detail banner aspect ratio (§3.5 — resolved as flexible min-height+cover rather than one fixed ratio), Work index desktop column count (§3.3 — resolved as a fluid auto-fit grid, sidestepping the fixed-count question entirely).
+**Resolved since v1, shipped, no longer open (2026-08-20 pass):** homepage intro band ground color (§1.4), Choose an Adventure badge colors (§1.4 — turned out to be flat fills, no hidden variant), nav hover/active treatment (§1.8), H1 size/weight (§1.5), Work index rule color (§2.1), Work detail banner aspect ratio (§3.5 — resolved as flexible min-height+cover rather than one fixed ratio), Work index desktop column count (§3.3 — resolved as a fluid auto-fit grid, sidestepping the fixed-count question entirely), tablet/mobile breakpoint values (§1.2 — Sarah checked every page live and confirmed the shipped 899/680-and-friends tier is correct as-is).
 
 **Still genuinely open:**
-1. **Tablet/mobile breakpoint values** `[OPEN]` — the desktop container/gutter numbers are now confirmed correct against the real mockups (§1.2), but the mockups only ever show one 1440px desktop canvas, so the 600/900/1200 vs. the shipped 899/680-and-friends question can't be settled by measurement the way the container question was. Needs Sarah's live-browser judgment.
-2. **About annotated-edit block refresh cadence** `[OPEN]` — doesn't block anything, see §3.7.
-3. **Etc. future category set (press, speaking, etc.)** `[OPEN]` — confirmed "more to come," not yet scoped.
+1. **About annotated-edit block refresh cadence** `[OPEN]` — doesn't block anything, see §3.7.
+2. **Etc. future category set (press, speaking, etc.)** `[OPEN]` — confirmed "more to come," not yet scoped.
 
 ---
 
