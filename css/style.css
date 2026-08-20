@@ -505,7 +505,7 @@ ul {
 .testimonial {
   flex: 0 0 auto;
   width: 220px;
-  height: 190px;
+  min-height: 190px;
   display: flex;
   flex-direction: column;
   color: var(--color-white);
@@ -515,7 +515,8 @@ ul {
 }
 
 .testimonial p {
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 1.2rem;
   margin-bottom: 1.6em;
 }
 
@@ -846,6 +847,7 @@ video.case-hero__media {
 .dark-quotes .testimonial p {
   font-style: italic;
   font-weight: 400;
+  font-size: 1rem;
   margin-bottom: 1em;
 }
 
