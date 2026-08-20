@@ -537,7 +537,7 @@ ul {
   background: var(--color-coral);
 }
 .testimonial--olive {
-  background: var(--color-olive);
+  background: var(--olive-text);
 }
 .testimonial--yellow {
   background: var(--color-yellow);
