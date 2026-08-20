@@ -2,6 +2,14 @@
 
 Last updated: 2026-08-20
 
+## 2026-08-20 session, part 3 — VSCode preview, actually fixed, and design-system doc reconciled
+
+**VSCode in-editor preview — closed for real, confirmed live with Sarah watching.** The command every prior attempt assumed existed, "Simple Browser: Show," **does not exist in her VSCode install** — nobody had ever actually opened the Command Palette to check, across multiple prior sessions of guessing. Had her open it live: her Command Palette shows "Browser: Open Integrated Browser" instead. Started `bundle exec jekyll serve --livereload` in the background, had her select that command and enter `http://127.0.0.1:4000` — real, fully-styled site rendered inside VSCode, confirmed by her own screenshot. Fix is now documented plainly in `BACKLOG.md` so it doesn't have to be rediscovered.
+
+**Design-system doc (`reference/design-system-personal-v2.md`, renamed from `v1` this session) fully reconciled against the shipped site.** Went section by section, checked every value against real CSS/HTML. Resolved all 9 of the doc's originally-`[OPEN]` items (badge colors, nav hover, H1 sizing, homepage intro band color, Work index rule color/column layout, banner aspect ratio, and — after Sarah's own live breakpoint check confirmed the shipped 899/680 tier is correct — the tablet/mobile breakpoint question too). Caught and corrected 3 more factual errors the doc had silently carried since v1 (About's quote-block border documented as teal/1px, actually yellow/8px; Concept→Launch accent documented as teal, actually olive; Awards label treatment ambiguous, actual shipped is a small coral eyebrow not a heavy H2). Only 2 items remain genuinely open: About block refresh cadence and Etc.'s future category set — both real editorial decisions, not code questions.
+
+**Session closed here.**
+
 ## 2026-08-20 session, part 2 — page-by-page QA fixes: skip-link, pattern blur, WDYWK carousel, several UI/content items
 
 Three commits: `e2316c0`, `2bfdbac`, `b2a33ff`. All queued during her live page-by-page review, held until she said "execute," then shipped as a batch.

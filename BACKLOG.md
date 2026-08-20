@@ -21,18 +21,13 @@ Full account in `PROGRESS.md`. Short version of what's now closed:
 - Testimonial contrast: landed on bumping quote text to qualify for WCAG's large-text exception (1.2rem/700) instead of touching any color — two earlier attempts that changed colors were both wrong for reasons logged in `PROGRESS.md`, worth reading if this comes up again. Also caught the "Sarah Strategic Consulting" panel running two different olives side by side (badge vs. testimonial card) — unified to one.
 - Found and fixed two bugs I introduced myself: sitemap.xml was invalid XML (front-matter parsing bug) and the 404 page's H1 had an unexplained indent (leftover badge padding with no background to justify it).
 
-## 2026-08-16 — READ FIRST: VSCode in-editor preview is still broken, don't re-attempt blind
+## 2026-08-20 — RESOLVED: VSCode in-editor preview, the actual fix, confirmed live
 
-Asked and answered wrong five times in a row this session — full honest account in `PROGRESS.md` under "session, part 3." Don't repeat the pattern of guessing another variant.
+Closed for real this time — confirmed together, with Sarah watching, not assumed.
 
-**What's actually confirmed working (verified, not assumed):**
-- `sarahdzida.com` is live, styled correctly, confirmed by Sarah's own eyes.
-- The root-absolute-path bug that broke styling on the temporary GitHub URL is fixed at the code level (works at any hosting depth now, verified against real `page.url` values, not guesses).
-- The recurring terminal `bundle: command not found` error is fixed — `rbenv` is now wired into `~/.zshrc`. Sarah's own terminal screenshot confirmed `jekyll serve --livereload` starting clean, no error, for the first time this session.
+**The fix:** `bundle exec jekyll serve --livereload` in a terminal (starts clean now that `rbenv` is wired into `~/.zshrc`), then in VSCode: Command Palette (`Cmd+Shift+P`) → type "Browser" → select **"Browser: Open Integrated Browser"** → enter `http://127.0.0.1:4000` when prompted. Renders the real, fully-styled site inside VSCode.
 
-**What's NOT fixed:** getting a real rendered preview to show up *inside VSCode*. Three things were tried (Simple Browser, a plain fallback browser tab, a `.vscode/tasks.json` auto-start task) — none were confirmed working with Sarah watching, and the tasks.json attempt was removed rather than left in an unverified state.
-
-**Before touching this again:** first establish, with Sarah present, whether VSCode's Simple Browser feature (Command Palette → "Simple Browser: Show") even works in her installation — that was never actually confirmed either way, just assumed. If it doesn't, don't keep trying VSCode-specific approaches — fall back to the version with zero unknowns: `bundle exec jekyll serve --livereload` in a terminal (now works, confirmed), viewed in her regular browser (Safari/Chrome) at `http://127.0.0.1:4000`, no VSCode integration at all. Confirm that baseline actually works for her before attempting any in-editor convenience layer again.
+**Why past attempts failed:** "Simple Browser: Show" — the command every prior session assumed existed and tried to use — **does not exist in Sarah's VSCode install.** Nobody had ever actually opened the Command Palette and checked; it was assumed, not confirmed, across multiple sessions. Her version's equivalent is named "Browser: Open Integrated Browser" instead. Also confirmed: "Live Preview: Start Server" is a *different*, wrong tool — that's the one that serves raw unprocessed source and caused the original "Jekyll is broken" false alarm days ago. Don't use it for this site.
 
 ## 2026-08-16 — RESOLVED: live on the real domain, two bugs found and fixed along the way
 
@@ -47,7 +42,7 @@ All 3 action items from the "READ FIRST NEXT SESSION" entry below are done — t
 
 **Loose end, not blocking:** a `sarah` A record in the DNS zone pointing to `172.66.0.70` — not a GitHub Pages IP, origin unexplained, spotted while debugging the domain conflict. Worth a look whenever you're in that DNS panel next, no urgency.
 
-**VSCode in-editor preview:** still open — see the entry above this one, which supersedes this note with the full, honest account of what was and wasn't actually fixed.
+**VSCode in-editor preview:** resolved 2026-08-20 — see the entry above this one.
 
 ## 2026-08-16 — READ FIRST NEXT SESSION (historical, fully resolved above)
 
