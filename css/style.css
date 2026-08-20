@@ -62,7 +62,6 @@
   --color-hairline: color-mix(in srgb, var(--color-ink) 15%, white);
   --hero-bg: color-mix(in srgb, var(--color-teal) 45%, white);
   --olive-text: #6e7556;
-  --coral-text: #bd4a42;
 
   --font-display: "Raleway", sans-serif;
   --font-body: "Open Sans", sans-serif;
@@ -536,15 +535,9 @@ ul {
 }
 .testimonial--coral {
   background: var(--color-coral);
-  color: var(--color-ink);
 }
 .testimonial--olive {
   background: var(--color-olive);
-  color: var(--color-ink);
-}
-.testimonial--coral cite,
-.testimonial--olive cite {
-  opacity: 1;
 }
 .testimonial--yellow {
   background: var(--color-yellow);
