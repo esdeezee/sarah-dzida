@@ -2,6 +2,16 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-20.
 
+## Future case studies to build (tracked so the hero copy doesn't get forgotten)
+
+The homepage hero paragraph names 4 things with no case study behind them yet — bold was dropped from these specifically so they don't read as dead/broken links in the meantime:
+- Advising founders and executives
+- Story across mediums
+- Teaching human-centered design thinking
+- Opening up new markets
+
+When any of these get a real case study, re-link that phrase (matching the other `.inline-link` phrases in the same paragraph) and re-add the bold if you want it back before the link exists.
+
 ## 2026-08-20 — RESOLVED this session: accessibility, content, SEO, olive consistency
 
 Full account in `PROGRESS.md`. Short version of what's now closed:
@@ -71,8 +81,9 @@ What actually happened on 2026-08-15: Sarah was viewing the raw, uncompiled sour
 
 **Do not re-litigate this.** The Jekyll restructuring is sound. Going forward, preview this site locally with `bundle exec jekyll serve --livereload` (compiled output, auto-refreshing) — never by pointing a static file server at the raw `_layouts`/`_includes`/`_case_studies` source.
 
-## 2026-08-15 — still open
+## 2026-08-20 — still open
 
+- **Site metadata title/description** — you're redrafting to "Sarah Dzida — Product & Experience Consultant | Creative Writer" but said to hold until it's final. Homepage `<title>`, `_config.yml`'s sitewide description, and possibly the on-page hero copy ("I'm a creative writer, product builder and strategy expert," which is close but not identical wording) are all queued once you land on final wording.
 - **Tablet/mobile breakpoints (680/860 vs. the doc's 600/900/1200)** — the desktop container/gutter number is now confirmed correct against the real mockups (see 2026-08-20 above), but mockups only ever show one 1440px desktop canvas, so the breakpoint values themselves are still unverified by anything in the repo. You're checking this live now.
 - **WDYWK case-study hero, desktop centering** — swapped from a blind "top" anchor to `center 20%`, estimated from the raw source image since this environment can't render the final composited crop. Flagged as a real estimate, not a guaranteed fix — check it in your current pass.
 - **Design-system doc has drifted further from shipped reality** — now includes the confirmed-correct container/gutter numbers from 2026-08-20 on top of the older drift (Awards rebuild, H1/H2 weight unification, case-study H3 demotion). This is the doc-reconciliation pass planned for the end of this session.
