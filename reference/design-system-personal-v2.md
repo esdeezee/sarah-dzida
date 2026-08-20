@@ -1,4 +1,4 @@
-# Sarah Dzida (Personal Site) — Design System (v1)
+# Sarah Dzida (Personal Site) — Design System (v2)
 
 **Build reference for Claude Code.** This is the source of truth for sarahdzida.com's visual system. Derived from two sources: `design-system-v4.md` (sarahstrategic.com, the proven shipped foundation — v3 is archived/superseded and was not consulted or used as a source for anything in this document) and the Figma mockups (About, Etc., Homepage, Work index, and four Work case-study pages: KidHQ & ToyLab, See Lexus, Travis County Civil & Family Courts, Whaddyawannaknow). Where v4 and the mockups disagree, this document — confirmed against Sarah directly — wins.
 
@@ -223,6 +223,6 @@ A real, reusable text-treatment component, confirmed by Sarah — not one-off th
 
 ---
 
-*End of v1. This document should be updated the same way v4 was — flagged deviations with reasoning, not silent edits — once Claude Code builds against it and real screen output surfaces problems the flat mockups couldn't show.*
+*End of v2. This document should be updated the same way v4 was — flagged deviations with reasoning, not silent edits — going forward whenever real screen output surfaces something this doc gets wrong.*
 
-*Reconciled against the live, shipped site on 2026-08-20 — the doc had drifted meaningfully from reality across six weeks of build (three verified factual errors in earlier prose, a wrong H2 treatment, a wrong border color, several `[OPEN]` items long since resolved by actual decisions that never made it back here). Every value changed above was checked against the real CSS/HTML, not re-asserted from memory. The two items still marked `[OPEN]` are genuinely unresolved — everything else in Part 4's original list is now closed.*
+*v2, 2026-08-20 — this is a full reconciliation against the live, shipped site, not the original pre-build plan. v1 had drifted meaningfully from reality across six weeks of build (three verified factual errors in earlier prose, a wrong H2 treatment, a wrong border color, several `[OPEN]` items long since resolved by actual decisions that never made it back into the doc). Every value changed in this pass was checked against the real CSS/HTML, not re-asserted from memory. Only two items remain genuinely open (see Part 4) — everything else v1 flagged as open is now closed with a real, shipped answer.*
