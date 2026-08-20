@@ -326,10 +326,13 @@ ul {
 }
 
 .text-link:hover,
-.text-link:focus-visible,
+.text-link:focus-visible {
+  text-decoration-color: var(--color-yellow);
+}
+
 .inline-link:hover,
 .inline-link:focus-visible {
-  text-decoration-color: var(--color-yellow);
+  text-decoration-color: var(--color-teal);
 }
 
 .breadcrumb {
