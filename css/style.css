@@ -460,7 +460,7 @@ ul {
 }
 
 .adventure--strategic .adventure__label {
-  background: var(--color-olive);
+  background: var(--olive-text);
 }
 
 .adventure--virgil .adventure__label {
@@ -481,7 +481,7 @@ ul {
 }
 
 .adventure--strategic .adventure__link {
-  color: var(--color-olive);
+  color: var(--olive-text);
 }
 .adventure--virgil .adventure__link {
   color: var(--color-teal);
