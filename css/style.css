@@ -144,17 +144,18 @@ ul {
 .skip-link {
   position: absolute;
   left: 0;
-  top: -48px;
+  top: 0;
+  transform: translateY(-100%);
   background: var(--color-white);
   color: var(--color-teal);
   padding: 12px 20px;
   font-family: var(--font-body);
   font-weight: 600;
   z-index: 100;
-  transition: top 0.15s ease;
+  transition: transform 0.15s ease;
 }
 .skip-link:focus {
-  top: 0;
+  transform: translateY(0);
 }
 
 :focus-visible {
@@ -310,26 +311,25 @@ ul {
 /* ============================================================
    Buttons / links
    ============================================================ */
-.text-link {
-  font-weight: 600;
+.text-link,
+.inline-link {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-.text-link:hover,
-.text-link:focus-visible {
-  text-decoration-color: var(--color-yellow);
+.text-link {
+  font-weight: 600;
 }
 
 .inline-link {
   font-weight: 400;
-  text-decoration: underline;
-  text-underline-offset: 3px;
 }
 
+.text-link:hover,
+.text-link:focus-visible,
 .inline-link:hover,
 .inline-link:focus-visible {
-  font-weight: 700;
+  text-decoration-color: var(--color-yellow);
 }
 
 .breadcrumb {
@@ -714,7 +714,9 @@ ul {
 }
 
 .case-hero__content {
-  padding: clamp(28px, 4vw, 56px) var(--gutter);
+  padding-block: clamp(28px, 4vw, 56px);
+  padding-right: var(--gutter);
+  padding-left: calc(var(--gutter) + max(0px, (100vw - var(--container-width)) / 2));
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -823,7 +825,7 @@ video.case-hero__media {
    desktop shows all three (shrinking together to fit one row), mobile
    becomes a real one-at-a-time carousel via the same JS and arrow buttons. */
 .dark-quotes {
-  background: #000000;
+  background: #b8bda8;
   padding: 32px;
 }
 
@@ -838,10 +840,10 @@ video.case-hero__media {
   width: auto;
   height: auto;
   padding: 18px;
-  border: 1px solid var(--color-white);
+  border: 1px solid var(--color-teal);
   background: none;
   border-radius: 0;
-  color: var(--color-white);
+  color: var(--color-teal);
 }
 
 .dark-quotes .testimonial p {
@@ -855,11 +857,12 @@ video.case-hero__media {
   font-style: normal;
   font-weight: 400;
   font-size: 0.85rem;
-  opacity: 0.85;
+  color: var(--olive-text);
+  opacity: 1;
 }
 
 .dark-quotes .testimonial-arrow {
-  color: var(--color-white);
+  color: var(--color-teal);
 }
 
 .quote-band {
@@ -877,23 +880,23 @@ video.case-hero__media {
 
 .quote-band--teal {
   background-color: var(--color-teal);
-  background-image: url("../images/patterns/darkteal.png");
+  background-image: url("../images/sophisticated patterns/Pattern-sophisticated-darkteal.png");
 }
 .quote-band--olive {
   background-color: var(--color-olive);
-  background-image: url("../images/patterns/olive.png");
+  background-image: url("../images/sophisticated patterns/Pattern-sophisticated-olive.png");
 }
 .quote-band--red {
   background-color: var(--color-red);
-  background-image: url("../images/patterns/red.png");
+  background-image: url("../images/sophisticated patterns/Pattern-sophisticated-red.png");
 }
 .quote-band--salmon {
   background-color: var(--color-coral);
-  background-image: url("../images/patterns/salmon.png");
+  background-image: url("../images/sophisticated patterns/Pattern-sophisticated-salmon.png");
 }
 .quote-band--yellow {
   background-color: var(--color-yellow);
-  background-image: url("../images/patterns/yellow.png");
+  background-image: url("../images/sophisticated patterns/Pattern-sophisticated-yellow.png");
 }
 
 .quote-band__card {
@@ -1005,9 +1008,11 @@ video.case-hero__media {
   }
 
   .hero__portrait {
-    max-width: 260px;
-    height: auto;
-    object-fit: initial;
+    width: 100vw;
+    max-width: none;
+    margin-left: calc(50% - 50vw);
+    height: 380px;
+    object-fit: cover;
   }
 }
 
@@ -1030,24 +1035,7 @@ video.case-hero__media {
   }
 }
 
-@media (max-width: 680px) {
-  .site-header .container {
-    flex-wrap: wrap;
-    row-gap: 10px;
-    min-height: auto;
-    padding-block: 16px;
-  }
-
-  .site-nav {
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .site-nav a {
-    font-size: 0.85rem;
-  }
-
+@media (max-width: 899px) {
   .testimonial-carousel {
     display: flex;
     align-items: center;
@@ -1094,6 +1082,25 @@ video.case-hero__media {
   .testimonial.is-active {
     display: flex;
     animation: testimonialFade 0.4s ease;
+  }
+}
+
+@media (max-width: 680px) {
+  .site-header .container {
+    flex-wrap: wrap;
+    row-gap: 10px;
+    min-height: auto;
+    padding-block: 16px;
+  }
+
+  .site-nav {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .site-nav a {
+    font-size: 0.85rem;
   }
 
   .site-footer .container {
