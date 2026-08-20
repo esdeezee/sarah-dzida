@@ -828,7 +828,7 @@ video.case-hero__media {
    desktop shows all three (shrinking together to fit one row), mobile
    becomes a real one-at-a-time carousel via the same JS and arrow buttons. */
 .dark-quotes {
-  background: hsl(75, 17%, 93%);
+  background: color-mix(in srgb, var(--color-olive) 35%, white);
   padding: 32px;
 }
 
