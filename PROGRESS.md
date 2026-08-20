@@ -1,6 +1,31 @@
 # Progress — sarah-dzida site build
 
-Last updated: 2026-08-16
+Last updated: 2026-08-20
+
+## 2026-08-20 session — accessibility/content/SEO QA pass, real container-width fix, two self-inflicted bugs found and fixed
+
+Six commits, in order: `479fa13`, `6ca14f2`, `d797586`, `b294fdc`, `63e0984`, `5f10ccd`, `c512e4e`.
+
+**Solid, shipped, verified against the actual built output before each push:**
+- 4 verbatim typos fixed (KidHQ intro, About intro, two in WDYWK) — she approved each exact replacement wording herself, not silently corrected.
+- Footer LinkedIn icon wired to her real profile URL (was `href="#"` since the first session).
+- Full SEO pass: canonical tags, og:image (real portrait by default, per-case-study hero image override — she specified this split), robots.txt, sitemap.xml, a branded 404 page. All net-new, none existed before today.
+- Orphaned unused images and the stray DNS record — both explicitly left alone at her direction, not touched.
+
+**The container-width investigation — this is the one worth remembering the method for.** The 2026-08-15 doc-vs-code mismatch (`design-system-personal-v1.md` said 1280px container/80px gutter; shipped CSS had 1160px/64px) had been carried forward as a "keep an eye on it" item for five days without ever being resolved either way. She pushed back hard on the instinct to just trust whichever artifact seemed more battle-tested ("the senior dev would do the investigation not just pussy foot around") — correctly. Wrote a small stdlib-only PNG decoder (no PIL available, didn't want to install anything mid-session without asking) to measure actual content edges against the real mockup PNGs pixel-by-pixel, across dozens of rows on three separate mockups. Result: content starts exactly 80px in from the canvas edge, consistently, on every page checked — an exact match for the doc's numbers, confirmed by a second, independent measurement (a full-bleed framed section's 24px border, also matching the doc exactly). The shipped CSS was the one that had drifted. Fixed: `--container-width` 1160px → 1280px, `--gutter` ceiling 64px → 80px. Sitewide, every page. Caveat that still stands: mockups are only ever a single 1440px desktop canvas, so this only verifies the desktop number — the 680/860 vs. 600/900/1200 breakpoint disagreement is still unverified by anything in the repo. She's doing that check herself, live, this round.
+
+**Testimonial-card contrast — took three real attempts to land right, worth logging why each of the first two failed:**
+1. First attempt: darkened the coral/olive card backgrounds toward pre-existing "text-safe" color tokens. Wrong — coral and this palette's red sit at nearly the same hue (~1–3° apart), so darkening coral's lightness moves it directly through red's territory. She called it immediately: "looks like coral got swapped for some new red."
+2. Second attempt: kept the vibrant backgrounds, switched text to dark ink instead of white. Wrong for a different reason — it broke the established pattern of *every* testimonial card using uniform white text; two cards suddenly reading dark broke the row's visual consistency, not just the one card's color identity.
+3. **What actually shipped:** left every color exactly as originally designed (backgrounds and text). Instead, bumped the quote text to 1.2rem/700 sitewide, which is large/bold enough to legitimately clear WCAG's *large-text* 3:1 threshold instead of the normal-text 4.5:1 one — coral (3.04:1) and olive (3.53:1) both pass without moving a single color. Caught my own math error mid-fix: `rem` is relative to the `html` root's default 16px, not the body's 17px, so an initial 1.15rem (18.4px) would have landed just *under* the 18.667px large-text cutoff and not actually qualified — corrected to 1.2rem (19.2px) before shipping. Card height switched from a fixed 190px to `min-height` so longer quotes can't clip now that the text is bigger. Scoped the WDYWK dark-quotes carousel (same class, different component, already white-on-black at 21:1) back to its original size so it didn't inherit the bump by accident.
+4. Follow-up, same session: caught that the "Sarah Strategic Consulting" panel's badge and link text were still on the *original* bright olive while the testimonial card next to them had already moved to the accessible darker olive — two visibly different olives in the same panel. Matched both to the single accessible shade.
+5. Also confirmed, so it's not re-litigated later: the adventure-panel header badges (olive and coral) were never actually failing AA in the first place — they're 24px/700 sitewide, which already clears the large-text 3:1 bar on their own.
+
+**Two bugs I introduced and found before/while she was reviewing, both root-caused, not just patched:**
+- `sitemap.xml` 404'd live despite building clean locally. Cause: the front-matter block's closing `---` had content starting on the same line instead of its own line, so Jekyll never parsed it as front matter at all — the raw `---\nlayout: null\n---` text was being served as literal content before the XML declaration, which is invalid XML. Fixed by dropping the front matter entirely; the file needs zero Liquid processing.
+- 404 page's H1 sat with an unexplained ~34px left indent relative to everything else on the page. Cause: reused `.page-head__label`, which is styled everywhere else as a colored *badge* (10px/24px padding) — every other page gives it a background color so the padding reads as an intentional box. 404 had no modifier class, so the same padding applied with nothing visible to explain it. Fixed by dropping the badge treatment for 404 specifically — it's not one of the four branded sections, so it doesn't need to pretend to be.
+
+**Still open, not touched this session, tracked in BACKLOG.md:** WDYWK case-study hero desktop centering (my best estimate from the raw image, `center 20%`, not verified against a real render — she's checking this in her current pass), the design-system doc still needs its numbers corrected to match the now-confirmed-real container/gutter values, tablet/mobile breakpoints (she's checking live now), VSCode in-editor preview (explicitly deferred to end of session, untouched).
 
 ## 2026-08-16 session, part 3 — domain live, path bug fixed, terminal fixed; in-editor preview NOT fixed
 

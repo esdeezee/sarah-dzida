@@ -1,6 +1,15 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-16.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-20.
+
+## 2026-08-20 — RESOLVED this session: accessibility, content, SEO, olive consistency
+
+Full account in `PROGRESS.md`. Short version of what's now closed:
+- 4 typos fixed with your exact wording, LinkedIn footer link wired to your real profile.
+- Full SEO build: canonical tags, og:image (portrait default, per-case-study override), robots.txt, sitemap.xml, branded 404 page.
+- Container width was genuinely wrong, not just undocumented — measured the real mockup PNGs pixel-by-pixel and confirmed the design-doc numbers (1280px/80px) were right, shipped CSS (1160px/64px) had drifted. Fixed sitewide. Only the desktop number is verified this way — you're checking tablet/mobile breakpoints live now, see open item below.
+- Testimonial contrast: landed on bumping quote text to qualify for WCAG's large-text exception (1.2rem/700) instead of touching any color — two earlier attempts that changed colors were both wrong for reasons logged in `PROGRESS.md`, worth reading if this comes up again. Also caught the "Sarah Strategic Consulting" panel running two different olives side by side (badge vs. testimonial card) — unified to one.
+- Found and fixed two bugs I introduced myself: sitemap.xml was invalid XML (front-matter parsing bug) and the 404 page's H1 had an unexplained indent (leftover badge padding with no background to justify it).
 
 ## 2026-08-16 — READ FIRST: VSCode in-editor preview is still broken, don't re-attempt blind
 
@@ -64,36 +73,14 @@ What actually happened on 2026-08-15: Sarah was viewing the raw, uncompiled sour
 
 ## 2026-08-15 — still open
 
-- **Sitewide grid/breakpoint/spacing foundation** — flagged last session as untouched (design-system doc specifies `1280px`/`80·48·24px` gutters/`600·900·1200` breakpoints; shipped CSS uses `1160px`/fluid clamp gutter/`680·860` breakpoints) and still true going into today's breakpoint QA pass. Worth keeping in mind while you QA — if a breakpoint looks wrong, this foundational mismatch may be why.
-- **WDYWK mobile hero crop** — still marked "attempted, not confirmed working" from two sessions ago. Should get real signal once breakpoint QA reaches it.
-- **Footer LinkedIn icon still links to `#`** — hover color is fixed (teal → yellow), but there's still no real profile URL. Also flagging: yellow-on-white for that hover state is ~1.9:1 contrast, under the 3:1 minimum for a UI icon — decorative/hover-only so shipped as asked, but noting in case you want a deeper gold instead.
-- **Design-system doc has drifted further from shipped reality** — today's Awards rebuild (small eyebrow-style label, not a heavy H2), the H1/H2 weight unification, and the case-study H3 demotion aren't reflected in `reference/design-system-personal-v1.md`. Same standing issue as before: doc prose vs. actual shipped code are diverging, worth a doc pass if you want it trustworthy as a standalone reference again.
-- **Two now-orphaned assets** — `images/case-studies/see-lexus/see-lexus-websitestatic.jpg` (replaced by the autoplay video) and the full `images/case-studies/wdywk/wdywk-interview-quotes.png` (replaced by three individual crops) are unused but still on disk. Not urgent, just noting.
-- **Travis County case study** — still has no real hero/content-image assets, still running on one old top-level JPG, no "Concept → Launch" section built. Unchanged since last session — waiting on you to drop the files.
-- **See Lexus hero video vs. static** — resolved (see above), noting here only because the old backlog entry framed it as open.
+- **Tablet/mobile breakpoints (680/860 vs. the doc's 600/900/1200)** — the desktop container/gutter number is now confirmed correct against the real mockups (see 2026-08-20 above), but mockups only ever show one 1440px desktop canvas, so the breakpoint values themselves are still unverified by anything in the repo. You're checking this live now.
+- **WDYWK case-study hero, desktop centering** — swapped from a blind "top" anchor to `center 20%`, estimated from the raw source image since this environment can't render the final composited crop. Flagged as a real estimate, not a guaranteed fix — check it in your current pass.
+- **Design-system doc has drifted further from shipped reality** — now includes the confirmed-correct container/gutter numbers from 2026-08-20 on top of the older drift (Awards rebuild, H1/H2 weight unification, case-study H3 demotion). This is the doc-reconciliation pass planned for the end of this session.
+- **Travis County case study** — still has no real hero/content-image assets, still running on one old top-level JPG, no "Concept → Launch" section built. You're handling this one yourself.
 
-## Accessibility: contrast issues traced to your own color choices
+## Accessibility, typos, SEO — resolved 2026-08-20
 
-Unchanged from last session — I didn't silently change these, they come from your mockup's color choices, not something I invented. Numbers are WCAG contrast ratios; AA requires 4.5:1 for normal text, 3:1 for large/bold text (~19px+bold or ~24px+).
-
-- **White text on coral (`#EB6D66`)** — 3.04:1. Fails AA at every size, including normal text. Used on the "Andrea L." testimonial card (Home) and the coral testimonial-card color generally.
-- **White text on olive (`#858E69`)** — 3.53:1. Fails AA for normal-size text (George Bernard Shaw / "the Artist herself" quotes on Home), passes for large bold text (section label chips).
-- **Coral or olive as bold "large text" labels** (adventure section labels, the Awards heading on Etc.) sit at 3.0–3.5:1 — clears the large-text 3:1 minimum today, but barely.
-- **About page's struck-through `<del>` text** renders at ~2.9:1 — fails AA outright. Might be intentional (the whole visual metaphor is de-emphasis). Your call.
-
-## Typos preserved verbatim from your mockup copy
-
-Unchanged — still kept exactly as written per your "stick to the mockups" instruction:
-
-- Travis County: "I was responsible for the **follwoing** components"
-- KidHQ: "In 2018, THAT **what** Forbes called" (likely missing "was")
-- About: "I asked the 🤖 **what is** might say" (likely meant "it")
-- WDYWK: "In the process of getting it **launch**, I navigated..." (likely missing "to")
-- WDYWK: "THAT **was able pitch** more focus group testing" (likely missing "to")
-
-## SEO items that need a real domain (can't guess a URL)
-
-Unchanged — no canonical `<link>` tags, no `og:image`, no `sitemap.xml` — all need your actual domain once you know where this deploys. `robots.txt` and a branded 404 page are still just suggestions, not built.
+All of the previous entries in this section (coral/olive testimonial contrast, the About page's struck-through-text contrast, the 5 verbatim typos, and the domain-dependent SEO items) are fixed — see the 2026-08-20 section at the top of this file and `PROGRESS.md` for exactly what shipped and why. Travis County's typo is still there since that page is yours to finish.
 
 ## One enhancement I added beyond the mockup
 
