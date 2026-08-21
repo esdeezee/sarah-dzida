@@ -36,6 +36,9 @@ When any of these get a real case study, re-link that phrase (matching the other
 - CoreLogic
 - Xperi
 - Motive Labs
+- Bruce Lee books
+- UX Strategy (the book)
+- OpenIDEO
 
 ## 2026-08-20 — RESOLVED this session: accessibility, content, SEO, olive consistency
 
