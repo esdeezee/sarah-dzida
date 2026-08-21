@@ -2,6 +2,12 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-20.
 
+## Favicon is hard to see in dark mode
+
+Currently swaps black/white logo based on the browser's light/dark mode (`prefers-color-scheme`), assuming a dark theme means a dark tab background to show the white mark against — doesn't hold up in practice, thin white line art doesn't read at favicon size regardless. Real fix: give the favicon its own solid teal background (circle or square) with the white mark on top, same logic as the nav, so it doesn't depend on the browser theme at all — one file, always legible. Needs a new exported asset from you (teal bg + white mark, PNG) since I don't have a reliable way to composite that myself here. Nav's white logo is unaffected — that already works because it sits on its own teal background.
+
+**When this actually gets handled: tell the sarah-strategic Claude Code session to do the equivalent fix for their black favicon** — same underlying problem likely exists there in reverse (black mark hard to see in light mode), and that's a separate project/session I don't have access to.
+
 ## 2026-08-20 (part 4) — RESOLVED: metadata, testimonial/portrait bugs, link-hover audit, Google Analytics
 
 Full account in `PROGRESS.md`. Short version:
