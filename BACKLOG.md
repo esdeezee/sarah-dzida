@@ -2,6 +2,17 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-20.
 
+## 2026-08-20 (part 4) — RESOLVED: metadata, testimonial/portrait bugs, link-hover audit, Google Analytics
+
+Full account in `PROGRESS.md`. Short version:
+- Site metadata (titles/descriptions) finalized across Home/Etc/Work, `_config.yml` synced.
+- Testimonial cards back to a real fixed height (220px) — the min-height fix from earlier today let panels drift to different heights.
+- Mobile hero portrait: fixed a bad head-crop, a gap above the image, and clipped corner-radius notches — all side effects of making it full-bleed.
+- `.inline-link` hover switched from font-weight to `text-decoration-thickness` — real weight changes can't avoid reflow, thickness can. Same fix applied to the footer's 2 links and the breadcrumb after a full sitewide audit found no other spots.
+- Google Analytics (GA4) is live sitewide, ID `G-56Z7CGLM0H`.
+
+**Still yours to do, not urgent:** decide whether to delete the old "Sarah Dzida Business" GA property (empty, never wired up) — no rush, doesn't affect anything.
+
 ## Future case studies to build (tracked so the hero copy doesn't get forgotten)
 
 The homepage hero paragraph names 4 things with no case study behind them yet — bold was dropped from these specifically so they don't read as dead/broken links in the meantime:
