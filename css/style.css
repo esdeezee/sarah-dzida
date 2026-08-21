@@ -263,7 +263,7 @@ ul {
 
 .site-footer__contact a:hover,
 .site-footer__contact a:focus-visible {
-  font-weight: 700;
+  text-decoration-thickness: 2px;
 }
 
 .site-footer__credits {
@@ -280,7 +280,7 @@ ul {
 
 .site-footer__credits a:hover,
 .site-footer__credits a:focus-visible {
-  font-weight: 700;
+  text-decoration-thickness: 2px;
 }
 
 .site-footer__social {
@@ -353,11 +353,6 @@ ul {
 .breadcrumb:focus-visible .breadcrumb__word {
   text-decoration-color: var(--color-yellow);
   text-decoration-thickness: 2px;
-}
-
-.breadcrumb:hover,
-.breadcrumb:focus-visible {
-  font-weight: 700;
 }
 
 /* ============================================================
