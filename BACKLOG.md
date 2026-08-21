@@ -23,6 +23,14 @@ The homepage hero paragraph names 4 things with no case study behind them yet �
 
 When any of these get a real case study, re-link that phrase (matching the other `.inline-link` phrases in the same paragraph) and re-add the bold if you want it back before the link exists.
 
+## Future case studies to add (new companies, not started)
+
+- Travis County (page already exists — just needs real assets, see the still-open item above)
+- Zera Hemp Labs
+- CoreLogic
+- Xperi
+- Motive Labs
+
 ## 2026-08-20 — RESOLVED this session: accessibility, content, SEO, olive consistency
 
 Full account in `PROGRESS.md`. Short version of what's now closed:
