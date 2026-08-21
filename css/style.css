@@ -332,7 +332,7 @@ ul {
 
 .inline-link:hover,
 .inline-link:focus-visible {
-  font-weight: 600;
+  text-decoration-thickness: 2px;
 }
 
 .breadcrumb {
@@ -508,7 +508,7 @@ ul {
 .testimonial {
   flex: 0 0 auto;
   width: 220px;
-  min-height: 190px;
+  height: 220px;
   display: flex;
   flex-direction: column;
   color: var(--color-white);
@@ -1006,6 +1006,10 @@ video.case-hero__media {
 }
 
 @media (max-width: 680px) {
+  .hero {
+    padding-top: 0;
+  }
+
   .hero .container {
     grid-template-columns: 1fr;
   }
@@ -1016,6 +1020,12 @@ video.case-hero__media {
     margin-left: calc(50% - 50vw);
     height: 380px;
     object-fit: cover;
+    object-position: center 15%;
+    border-radius: 0;
+  }
+
+  .hero__intro {
+    padding-top: clamp(40px, 6vw, 72px);
   }
 }
 
