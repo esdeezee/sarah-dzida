@@ -332,7 +332,7 @@ ul {
 
 .inline-link:hover,
 .inline-link:focus-visible {
-  text-decoration-color: var(--color-teal);
+  font-weight: 600;
 }
 
 .breadcrumb {
