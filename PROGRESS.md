@@ -2,6 +2,18 @@
 
 Last updated: 2026-08-20
 
+## 2026-08-20 session, part 5 — Google Analytics property decision, favicon flagged, Travis County success stats, session close
+
+Commits: `1d103de`, `27840f6`, `cf18caf`, `434c24d`, `471e703`.
+
+- **Google Analytics property.** Sarah had an old property from the site's Carrd.co days (`Sarah Dzida Business`, empty/unconfirmed history) and considered reusing it for continuity. After checking couldn't confirm real historical data was in it without more digging, she chose to just create a fresh property instead rather than keep chasing it — new Measurement ID `G-56Z7CGLM0H`, already wired in during part 4. The old property is still sitting there, hers to delete whenever (Admin → Property details → Move to Trash Can — not instant/irreversible, GA gives a recovery window).
+- **Favicon legibility flagged, not yet fixed** — tracked in `BACKLOG.md`. Currently swaps black/white logo by browser dark/light mode; the white version doesn't read well as a tiny favicon regardless of tab background. Real fix needs a new asset (teal-background version of the mark) that only she can export — nothing for me to build until she provides it. She also needs to separately flag the equivalent problem to the sarah-strategic Claude Code session (their black favicon likely has the mirror-image problem) — different project, not something I can reach.
+- **Travis County case study, success stats section** — real content update, iterated live: added 2 new bullets (IT team, kiosk/vendor work), reworded 2 existing ones, caught and fixed a verb-tense slip herself mid-review ("I help guide" → "I helped guide"), then refined the final bullet's wording once more. Final 7 bullets, all in `_case_studies/travis-county.html`.
+- **Future case studies tracked in `BACKLOG.md`, full running list:** Travis County (page exists, needs real assets — separate, older item), Zera Hemp Labs, CoreLogic, Xperi, Motive Labs, Bruce Lee books, UX Strategy (the book), OpenIDEO.
+- **Real workflow correction, worth remembering:** during the Travis County edits I was committing *and pushing* after every single small line change — she stopped me: "you shouldn't be pushing till i'm ready." Saved as a standing memory (`feedback_hold_pushes_until_ready`) — going forward, make the edit and hold; don't push until she gives an explicit go, especially mid-stream on iterative copy edits.
+
+**Session closed here at her request** — she may return for a second session today. Working tree is clean, everything committed and pushed, nothing left mid-edit.
+
 ## 2026-08-20 session, part 4 — metadata cleanup, two real bugs from the full-bleed portrait change, link-hover audit, Google Analytics
 
 Commits, in order: `00a82cf`, `7f2a3ee`, `63527b4`, `fc61d10`, `e15db72`, `2e6e06f`.
