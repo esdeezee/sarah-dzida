@@ -29,9 +29,7 @@ Full account in `PROGRESS.md`. Short version:
 
 ## Future case studies to build (tracked so the hero copy doesn't get forgotten)
 
-The homepage hero paragraph names 4 things with no case study behind them yet — bold was dropped from these specifically so they don't read as dead/broken links in the meantime:
-- Advising founders and executives
-- Story across mediums
+The homepage hero paragraph named 4 things with no case study behind them yet — bold was dropped from these specifically so they didn't read as dead/broken links in the meantime. Three now have real links: "advising founders and executives" → Zera Hemp Labs, "launch their visions" → CoreLogic, "story across mediums" → WDYWK. Still unlinked:
 - Teaching human-centered design thinking
 - Opening up new markets
 
