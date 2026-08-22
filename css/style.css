@@ -881,14 +881,14 @@ video.case-hero__media {
   padding: 0;
   background: none;
   border-radius: 0;
+  align-items: center;
 }
 
 .testimonials--gallery .testimonial img {
   display: block;
   width: 100%;
-  height: 320px;
-  object-fit: cover;
-  object-position: center 30%;
+  max-width: 565px;
+  height: auto;
   border-radius: var(--radius);
 }
 
