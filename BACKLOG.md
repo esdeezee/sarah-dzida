@@ -2,6 +2,10 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-21.
 
+## Stray file: not committed, sitting on disk
+
+`images/case-studies/corelogic/Screenshot 2023-05-25 at 18-56-32 Homepage.png` — a default macOS screenshot filename, unreferenced anywhere in the site. Left out of every commit this session since it looks like accidental leftover, not intentional source material. Still sitting there untracked — delete it, rename and use it, or tell me to leave it alone.
+
 ## Success-stats voice is split across the site
 
 CoreLogic, Xperi, Zera Hemp Labs, and See Lexus write success_stats as fragments&mdash;no "I," no trailing period ("Led a 4-sprint, 4-month, full-website overhaul"). Travis County (5 of 7 bullets) and parts of KidHQ and WDYWK write them as full first-person sentences with periods ("I helped guide the Travis County IT team..."). Not something from this session&mdash;the split predates it, between the pre-existing case studies and the ones built recently. Worth picking one voice and normalizing, but it means editing copy on pages that already have your sign-off, so it's your call which direction to go.
