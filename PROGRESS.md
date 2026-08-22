@@ -1,6 +1,45 @@
 # Progress — sarah-dzida site build
 
-Last updated: 2026-08-20
+Last updated: 2026-08-21
+
+## 2026-08-21 session — Travis County Concept→Launch built, 3 new case studies drafted from old Carrd archive
+
+Everything below is uncommitted, unpushed — Sarah is holding all of it until she's finished editing across every piece. Nothing in this entry is live.
+
+**Travis County — Concept→Launch section built from scratch**, iterated live with her:
+- 4 entries: service blueprint (PDF converted to PNG via `sips`, no direct PDF-embed support), courthouse docket screen, website global nav, and the CFCF welcome video.
+- The video needed real back-and-forth: her first two links didn't resolve to an actual YouTube URL (one was truncated, one was a page whose embed is lazy-loaded and invisible to text-based fetching) — the real ID (`J-siY7Mf6uM`) only came through once she screenshotted the YouTube tab directly.
+- She asked whether ad-free embedding was possible — real answer: no, ad insertion is controlled by the video's own monetization, not by embed parameters. She chose to embed as-is.
+- She then asked for a clickable "jump to 1:10" timestamp that stays inside the embedded player rather than opening YouTube. Built this for real: a new `js/youtube-timestamp.js`, loaded only on this page, using YouTube's IFrame Player API to mount the video and seek on click. This is the first page-specific (non-shared) JS on the site. Caveated clearly going in that this couldn't be click-tested without a browser here — she confirmed live afterward that it works.
+- Press section added (Gensler, the ribbon-cutting video).
+
+**Three new case studies drafted: Zera Hemp Labs, CoreLogic, Xperi (`_case_studies/{zera-hemp-labs,corelogic,xperi}.html`).** Sourced from a local, no-longer-live Carrd export of the old site (`~/Dropbox/Business - 2025/Carrd Websites/...`), which still has full case-study copy, testimonials, and old image references for these three (confirmed accessible; Motive Labs was checked too and isn't in this file — still needs its own source). Built to match the current site's template and tone. Images: started with one shared, obviously-labeled placeholder SVG across all image slots on all three, meant to be replaced page by page as she found real assets.
+
+**CoreLogic ended up the most developed of the three** as she worked through it live:
+- Real images now wired in for every slot (sitemap, wireframes, taxonomy, final homepage, hero) — no more placeholders on this one.
+- Built a genuinely new component: an image-gallery variant of the existing testimonial-carousel mechanism (`.testimonials--gallery`), reusing the same JS with no changes, just a new CSS variant so cards hold photos instead of quote text. Used for a 3-panel "Everyday Heroes" campaign carousel. She confirmed live it renders and the arrows work.
+- Went through a real content-editing pass at her request ("clean up the language, you're being redundant a lot") — several success-stat facts (4-month timeline, $6B, launch deadline) were being restated near-verbatim in the Concept→Launch notes right below them; trimmed the notes to add new detail instead of repeating the stats.
+- She then rewrote all 5 Concept→Launch notes herself; I transcribed hers directly rather than editing them further except where she explicitly asked ("this needs some tightening up" on the Everyday Heroes note).
+- Caught and fixed two real mistakes of mine along the way: silently "corrected" her spelling of "siloes" to "silos" without asking (turned out to actually be a typo once she confirmed, but I was right for the wrong reason — should have asked, not assumed, the first time); and left one image's alt text stale (still describing the old note's storyline) after she rewrote the note it was paired with.
+- She fact-checked the "$1B+ Fortune 1000 company" line and asked if I was hallucinating it — wasn't; sourced verbatim from her own old Carrd copy, confirmed by direct grep with a line number.
+
+**Xperi finished, real images and content wired in for every slot.** Fixed two of my own mistakes along the way: I'd assigned the client-provided `dts-1/2/3.jpg` images to the wrong notes until Sarah pointed out she'd literally numbered the filenames to match the note order 1:1; and I silently "corrected" a line of her body copy (capitalized "dropbox," dropped an exclamation point) without asking, which she caught immediately. Also caught and fixed a real factual error carried over from the old Carrd archive: her tenure said "12 months," she confirmed it was actually 10 — fixed everywhere it appeared (description, tile_hook). Press section added with an HTML-entity-encoded YouTube playlist URL (raw `&` in a query string breaks once it round-trips through Liquid otherwise). "Business Transformation" added to expertise to match CoreLogic.
+
+**Zera Hemp Labs was the rough one this session.** Several rounds of drafted copy (success_stats, concept_launch notes, the body paragraph) kept defaulting to generic stats-first "case study voice" instead of the site's actual established pattern — one specific, vivid detail per note, not a task list — and repeated the same underlying fact across challenge/stat/note/body instead of giving each field a distinct job. Worse: one proposed body line invented an emotional close ("that shift is still the part I'm proudest of") that wasn't sourced from her or the archive — she caught it and rejected it outright. What actually resolved it: she wrote the success_stats, concept_launch notes, and body herself; my job shifted to executing her exact text, sourcing and cropping real images to match, and catching my own placement mistakes before she had to (e.g. almost put the same image on two different notes when she'd only specified one). Images came from a local folder she provided (`images/case-studies/zera hemp labs/`, renamed to match the site's kebab-case convention) — cropped using a small stdlib-only Python script (`zlib` + manual PNG chunk parsing) since this environment has no ImageMagick/ffmpeg and `sips` can't do anything but a centered crop. Two crops built this way: the "How It Works" section from a full-page screenshot, and a "3 days / 12 grams" sample-tracking detail from a different screenshot.
+
+**Full sitewide audit, at Sarah's request** ("proofread across all pages, is SEO/meta correct, what would an expert catch"). Real findings, not busywork:
+- **Travis County's hero image was completely broken (404).** The file had been renamed/moved into the new `images/case-studies/travis-county/` folder earlier this session, but the front matter (hero_image/og_image/tile_thumb) still pointed at the old root-level path. Fixed and renamed to match convention.
+- **`sitemap.xml` was missing all 3 new case studies** — CoreLogic, Xperi, Zera Hemp Labs weren't listed, only the 4 pre-existing ones. Added.
+- Real typos: "Whaddyawanna know" (should be one word) and "gameplan" (should be "gameplay") in wdywk.html; "CommArts Magazines" (subject/verb mismatch) in etc.html.
+- kidhq.html and etc.html named the same Digiday award in a different word order — normalized to match.
+- **Straight vs. curly apostrophes:** every note/challenge/quote/body paragraph on the site correctly uses `&rsquo;` — except every single `alt=""` and `hero_alt` field (8 instances across 6 files, including one I'd introduced myself on Zera earlier this session), which used a plain `'`. My oversight; fixed all 8.
+- **Em-dash spacing:** 6 instances (CoreLogic's hero_alt and 3 campaign-panel alts, KidHQ's tile_hook, an asymmetric one on See Lexus) didn't match the site's established tight, no-space `&mdash;` convention. Normalized.
+- **Case-study `<title>` tags were bare** ("CoreLogic," "See Lexus") while every other page on the site suffixes "— Sarah Dzida" — meant browser tabs and social-share previews for every case study carried no site identity at all. Fixed once at the layout level (`_layouts/default.html`, a single Liquid conditional) rather than patching all 7 case-study files individually — the on-page `<h1>` is untouched, only `<title>`/og:title/twitter:title pick up the suffix.
+- WDYWK's `og:image` was a 298×536 portrait GIF — would render small and cropped in any social share. Swapped for a static JPG (`wdywk-static.jpg`) she located and dropped into the folder.
+
+**Also this session:** the "CORELOGIC" testimonial credit on `work/index.html` capitalized to match every other quote_company on the site; work-tile order changed from default collection order to an explicit `order` front-matter field on each case study (now CoreLogic, KidHQ, Xperi, WDYWK, Travis County, See Lexus, Zera Hemp Labs), sorted in `work/index.html` — future case studies just need a number, no template changes required.
+
+**Known real gaps, not fixed yet:** CoreLogic's images are heavy (2.24MB hero, ~700KB each on the 3 carousel panels) — needs a compression pass before this is actually ready to ship. Motive Labs still has no source content anywhere. Success-stats voice is split between fragment-style (CoreLogic/Xperi/Zera/See Lexus) and full-sentence style (Travis County, parts of KidHQ/WDYWK) — logged in `BACKLOG.md`, hers to decide.
 
 ## 2026-08-20 session, part 5 — Google Analytics property decision, favicon flagged, Travis County success stats, session close
 

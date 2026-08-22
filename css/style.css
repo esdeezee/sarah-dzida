@@ -788,6 +788,13 @@ video.case-hero__media {
   background: var(--color-white);
 }
 
+.case-figure img.is-narrow {
+  width: auto;
+  max-width: 100%;
+  max-height: 640px;
+  margin-inline: auto;
+}
+
 .case-figure figcaption {
   font-size: 0.85rem;
   color: var(--color-ink);
@@ -861,6 +868,28 @@ video.case-hero__media {
 
 .dark-quotes .testimonial-arrow {
   color: var(--color-teal);
+}
+
+/* Image-gallery variant of the same testimonial-carousel mechanism (JS
+   just toggles .is-active — content inside a card can be a photo instead
+   of a quote). Used for CoreLogic's Concept->Launch campaign carousel. */
+.testimonials--gallery .testimonial {
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  height: auto;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+.testimonials--gallery .testimonial img {
+  display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: var(--radius);
 }
 
 .quote-band {

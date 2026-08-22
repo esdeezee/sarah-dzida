@@ -12,7 +12,8 @@ permalink: /work/index.html
     </div>
 
     <div class="work-grid">
-      {% for study in site.case_studies %}
+      {% assign ordered_studies = site.case_studies | sort: 'order' %}
+      {% for study in ordered_studies %}
       <a class="work-tile" href="{{ study.url | remove_first: '/work/' }}">
         {% if study.tile_thumb_video %}
         <video class="work-tile__thumb" autoplay muted loop playsinline poster="{{ study.tile_thumb_poster }}">
@@ -34,7 +35,7 @@ permalink: /work/index.html
     <div class="container">
       <blockquote class="quote-band__card">
         <p>&ldquo;I valued Sarah&rsquo;s leadership, organization, communication and ability to wrangle the team around a plan with a smile.&rdquo;</p>
-        <cite><span class="cite-name">Tico Clark</span> <span class="cite-role">&middot; Web Operations Manager &middot; CoreLogic</span></cite>
+        <cite><span class="cite-name">Tico Clark</span> <span class="cite-role">&middot; Web Operations Manager &middot; CORELOGIC</span></cite>
       </blockquote>
     </div>
   </section>

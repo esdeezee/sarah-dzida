@@ -1,6 +1,10 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-20.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-21.
+
+## Success-stats voice is split across the site
+
+CoreLogic, Xperi, Zera Hemp Labs, and See Lexus write success_stats as fragments&mdash;no "I," no trailing period ("Led a 4-sprint, 4-month, full-website overhaul"). Travis County (5 of 7 bullets) and parts of KidHQ and WDYWK write them as full first-person sentences with periods ("I helped guide the Travis County IT team..."). Not something from this session&mdash;the split predates it, between the pre-existing case studies and the ones built recently. Worth picking one voice and normalizing, but it means editing copy on pages that already have your sign-off, so it's your call which direction to go.
 
 ## Favicon is hard to see in dark mode
 
@@ -29,13 +33,10 @@ The homepage hero paragraph names 4 things with no case study behind them yet �
 
 When any of these get a real case study, re-link that phrase (matching the other `.inline-link` phrases in the same paragraph) and re-add the bold if you want it back before the link exists.
 
-## Future case studies to add (new companies, not started)
+## Future case studies to add (new companies)
 
-- Travis County (page already exists — just needs real assets, see the still-open item above)
-- Zera Hemp Labs
-- CoreLogic
-- Xperi
-- Motive Labs
+- **Travis County, CoreLogic, Xperi, Zera Hemp Labs** — all four now fully built with real images in every slot, live copy finalized directly with Sarah. CoreLogic still has heavy images (hero 2.24MB, carousel panels ~700KB each) — worth a compression pass before this is actually ready to ship, nothing else blocking.
+- **Motive Labs** — not started. Checked the old Carrd archive directly; it isn't in there either, so this one still needs a source from scratch.
 - Bruce Lee books
 - UX Strategy (the book)
 - OpenIDEO
