@@ -623,10 +623,8 @@ ul {
   max-width: 780px;
 }
 
-.about-lede {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 1.05rem;
+.about-section h2 {
+  margin-top: 1.6em;
 }
 
 .about-quote {
@@ -647,8 +645,49 @@ ul {
   font-weight: 600;
 }
 
-.about-section p + p.about-lede {
-  margin-top: 2em;
+.about-motifs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 40px;
+  row-gap: 32px;
+  margin: 1.6em 0;
+}
+
+.about-motif h3 {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin: 0 0 0.3em;
+}
+
+.about-motif h3::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 6px;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  background: var(--color-coral);
+}
+
+.about-motif:nth-child(2) h3::before {
+  background: var(--color-teal);
+}
+.about-motif:nth-child(3) h3::before {
+  background: var(--color-olive);
+}
+.about-motif:nth-child(4) h3::before {
+  background: var(--color-yellow);
+}
+.about-motif:nth-child(5) h3::before {
+  background: var(--color-red);
+}
+.about-motif:nth-child(6) h3::before {
+  background: var(--color-coral);
+}
+
+.about-motif p {
+  margin: 0;
 }
 
 /* ============================================================
@@ -1061,6 +1100,10 @@ video.case-hero__media {
   }
 
   .awards__list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-motifs {
     grid-template-columns: 1fr;
   }
 }

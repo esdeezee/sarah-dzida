@@ -1,6 +1,6 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-21.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-23.
 
 ## Stray file: not committed, sitting on disk
 
