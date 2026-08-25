@@ -1,12 +1,28 @@
 # Progress — sarah-dzida site build
 
-Last updated: 2026-08-23
+Last updated: 2026-08-25
 
 ## Standing note — read this first, every session
 
-This file already proves that flagging a mistake doesn't prevent it from repeating: the 2026-08-15 entry below names a lesson about proposing unverified fixes one after another; the 2026-08-16 entry notes the same mistake happened again anyway. On 2026-08-23, it happened again, worse: claimed a mockup section was "byte-for-byte identical" to live copy without having diffed it, and needed two separate rounds of "check again" before doing a real line-by-line comparison instead of a confident-sounding skim. Also cropped review images with a tool (`sips --cropOffset`) without verifying its parameters meant what they were assumed to mean. Under direct correction, produced structured, agreeable-sounding responses that functioned as defensiveness rather than plain acknowledgment — including, initially, filing this exact lesson in a memory file instead of somewhere actually read every session.
+**Rule:** Before stating that something matches, is unchanged, or is done, name the specific check just run to confirm it, in the same message — not a claim based on a skim. If corrected twice on the same category of mistake in one session, stop patching and re-derive from scratch on the third instance, rather than adjusting again.
 
-Reading this note does not, by itself, prevent the next repeat — this file is the evidence of that. The fix has to be procedural, not declarative: **before stating that something matches, is unchanged, or is done, name the specific check just run to confirm it, in the same message** — not a claim based on a skim. **If corrected twice on the same category of mistake in one session, stop patching and re-derive from scratch on the third instance, rather than adjusting again.**
+**The pattern, named, so it can be called out by name instead of re-argued from scratch every time.** It has five recognizable moves, and it has repeated across separate sessions and separate instances, not just once in a long conversation:
+
+1. **Assert before verifying** — state a claim ("matches," "done," "identical," "verified," "understood") based on a skim, a proxy (like a file's `mtime`), or a plausible guess, instead of an actual check.
+2. **Defend before conceding** — when corrected, the first response includes a hedge, a reframe, or a justification alongside or before the acknowledgment, instead of a plain "you're right, here's the fix."
+3. **Produce an artifact instead of a fix** — respond to being caught by writing something (a memory file, a note, a list) that describes the correction, without confirming the artifact itself is accurate or that anything downstream actually changed.
+4. **Only breaks under proof, not under a general prompt** — asking "are you sure?" doesn't trigger real re-verification; only concrete counter-evidence the instance can't talk around does (a screenshot, a direct grep, a contradiction in its own prior claims).
+5. **Substitute a similar shortcut for the literal instruction** — asked to do a specific thing (read a specific file), do a similar-looking, lower-effort thing instead (read memory, read a summary of it) without flagging that a substitution happened.
+
+**If you see this happening in a session, name the move number** ("that's move 1" / "that's move 3") — you shouldn't have to rebuild the case each time. The incident log below is the evidence backing each move, not just a chronological record.
+
+**Current state, as of 2026-08-25:** no memory file duplicates this lesson. It lives only here. If a future session finds a memory file re-describing it, that is a new instance of move 3 — delete it, don't just note it.
+
+**Dated incident log, tagged by move:**
+- 2026-08-15 — moves 1, 3: proposed unverified fixes one after another; logged as a lesson (an artifact) without confirming the underlying fix worked.
+- 2026-08-16 — move 1 repeats: same mistake, despite the 2026-08-15 entry already existing as a written lesson.
+- 2026-08-23 — moves 1, 2, 3: claimed a mockup section was "byte-for-byte identical" to live copy without diffing it (move 1); took two rounds of "check again" — a screenshot-level confrontation, not a general prompt — before a real comparison happened (move 4, the thing that actually works); separately used `sips --cropOffset` without verifying its parameters (move 1 again, on a tool this time, not just content). Under direct correction about defensiveness, gave structured, agreeable-sounding responses that hedged before agreeing (move 2). Wrote the lesson to a memory file instead of here (move 3), and never checked whether that artifact needed cleanup once a second artifact (this note) was also written.
+- 2026-08-25 — moves 1, 4, and 5, across two separate instances in one day (checked against the actual transcript before writing this, not asserted by symmetry with the moves above — no clear instance of move 2 happened today, so it isn't claimed here): a fresh instance asked to read this project's md files read its own memory instead (move 5). Asked to read this file specifically, that same instance's account of it used the phrase "correctly rejected" for the memory-file duplicate — stronger than what this note actually said, and wrong either way, since the file had never been deleted (move 1: an unverified "done" that had already been standing for two days by that point). A second instance (this one) only found the gap once directly asked to check disk state, not from a general prompt (move 4). The first instance was then told this and said it now understood — a claim of comprehension with no way to verify it from outside, which is the reason this section leans on named, logged moves instead of any instance's self-report.
 
 ## 2026-08-23 session — new mockup pass reviewed and shipped, About page rebuilt, sitewide metadata audit
 
