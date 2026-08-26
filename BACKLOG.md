@@ -1,6 +1,6 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-23.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-25.
 
 ## Stray file: not committed, sitting on disk
 
@@ -10,9 +10,9 @@ Open items that need your judgment, not mine. Bugs I could just fix are already 
 
 CoreLogic, Xperi, Zera Hemp Labs, and See Lexus write success_stats as fragments&mdash;no "I," no trailing period ("Led a 4-sprint, 4-month, full-website overhaul"). Travis County (5 of 7 bullets) and parts of KidHQ and WDYWK write them as full first-person sentences with periods ("I helped guide the Travis County IT team..."). Not something from this session&mdash;the split predates it, between the pre-existing case studies and the ones built recently. Worth picking one voice and normalizing, but it means editing copy on pages that already have your sign-off, so it's your call which direction to go.
 
-## Favicon is hard to see in dark mode
+## Favicon — background color still an open question
 
-Currently swaps black/white logo based on the browser's light/dark mode (`prefers-color-scheme`), assuming a dark theme means a dark tab background to show the white mark against — doesn't hold up in practice, thin white line art doesn't read at favicon size regardless. Real fix: give the favicon its own solid teal background (circle or square) with the white mark on top, same logic as the nav, so it doesn't depend on the browser theme at all — one file, always legible. Needs a new exported asset from you (teal bg + white mark, PNG) since I don't have a reliable way to composite that myself here. Nav's white logo is unaffected — that already works because it sits on its own teal background.
+The theme-swap approach (black/white logo by `prefers-color-scheme`) was replaced with a solid-teal-background version in an earlier session, then you flagged (via screenshot) that the teal was still hard to make out in a browser tab. 2026-08-25: iterated on this twice — cropped the mark tighter to just the bolder inner "S," dropping the fine outer scribble ring that doesn't survive shrinking to real favicon size, keeping the teal ground (`Logo-NoCircle-TealBackground.png`, shipped and live). Whether that crop alone is enough, or the background itself still needs to change, is unresolved — you've since dropped a third trial asset (`Logo-WhiteBackground.png`, full mark including the outer ring, on white) into the repo but haven't said to ship it. Not wired in; your call which direction wins.
 
 **When this actually gets handled: tell the sarah-strategic Claude Code session to do the equivalent fix for their black favicon** — same underlying problem likely exists there in reverse (black mark hard to see in light mode), and that's a separate project/session I don't have access to.
 
