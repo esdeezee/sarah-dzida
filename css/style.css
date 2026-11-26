@@ -160,8 +160,13 @@ ul {
 }
 
 :focus-visible {
-  outline: 3px solid var(--color-yellow);
+  outline: 3px solid var(--color-teal);
   outline-offset: 2px;
+}
+
+/* Yellow on the teal header, where teal would disappear. */
+.site-header :focus-visible {
+  outline-color: var(--color-yellow);
 }
 
 /* ============================================================
