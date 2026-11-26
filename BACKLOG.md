@@ -1,6 +1,10 @@
 # Backlog
 
-Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-08-25.
+Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-11-25.
+
+## Keyboard focus ring is hard to see on white (found 2026-11-25, not fixed)
+
+The sitewide `:focus-visible` outline is yellow, about 1.6:1 against white; the accessibility minimum is 3:1. The mobile quote-card arrows also turn yellow on hover and focus. This is a defect in my build. The fix changes how focus looks, so it needs your OK. The design-system doc says the ring should be `--red-dark`, which is not what shipped.
 
 ## Stray file: not committed, sitting on disk
 
@@ -37,7 +41,7 @@ When any of these get a real case study, re-link that phrase (matching the other
 
 ## Future case studies to add (new companies)
 
-- **Travis County, CoreLogic, Xperi, Zera Hemp Labs** — all four now fully built with real images in every slot, live copy finalized directly with Sarah. CoreLogic still has heavy images (hero 2.24MB, carousel panels ~700KB each) — worth a compression pass before this is actually ready to ship, nothing else blocking.
+- **Travis County, CoreLogic, Xperi, Zera Hemp Labs** — all four now fully built with real images in every slot, live copy finalized directly with Sarah. CoreLogic's images, once heavy, are all under 500KB as of 2026-11-25.
 - **Motive Labs** — not started. Checked the old Carrd archive directly; it isn't in there either, so this one still needs a source from scratch.
 - Bruce Lee books
 - UX Strategy (the book)
@@ -109,7 +113,6 @@ What actually happened on 2026-08-15: Sarah was viewing the raw, uncompiled sour
 
 ## 2026-08-20 — still open
 
-- **Site metadata title/description** — you're redrafting to "Sarah Dzida — Product & Experience Consultant | Creative Writer" but said to hold until it's final. Homepage `<title>`, `_config.yml`'s sitewide description, and possibly the on-page hero copy ("I'm a creative writer, product builder and strategy expert," which is close but not identical wording) are all queued once you land on final wording.
 - **Tablet/mobile breakpoints (680/860 vs. the doc's 600/900/1200)** — the desktop container/gutter number is now confirmed correct against the real mockups (see 2026-08-20 above), but mockups only ever show one 1440px desktop canvas, so the breakpoint values themselves are still unverified by anything in the repo. You're checking this live now.
 - **WDYWK case-study hero, desktop centering** — swapped from a blind "top" anchor to `center 20%`, estimated from the raw source image since this environment can't render the final composited crop. Flagged as a real estimate, not a guaranteed fix — check it in your current pass.
 - **Design-system doc has drifted further from shipped reality** — now includes the confirmed-correct container/gutter numbers from 2026-08-20 on top of the older drift (Awards rebuild, H1/H2 weight unification, case-study H3 demotion). This is the doc-reconciliation pass planned for the end of this session.

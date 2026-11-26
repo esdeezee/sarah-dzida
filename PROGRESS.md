@@ -19,12 +19,22 @@ Last updated: 2026-11-25
 **Current state, as of 2026-08-25:** no memory file duplicates this lesson. It lives only here. If a future session finds a memory file re-describing it, that is a new instance of move 3 — delete it, don't just note it.
 
 **Dated incident log, tagged by move:**
+- 2026-11-25 — moves 1, 3, 4 (logged out of date order, newest first): reported contrast failures from hand-picked color pairs and missed "Quick Intro," "Choose an Adventure," and "Awards" (move 1); kept listing contrast as open instead of fixing it (move 3); only measured every page after she said "if its broken its because you are not fixing it" (move 4).
 - 2026-08-15 — moves 1, 3: proposed unverified fixes one after another; logged as a lesson (an artifact) without confirming the underlying fix worked.
 - 2026-08-16 — move 1 repeats: same mistake, despite the 2026-08-15 entry already existing as a written lesson.
 - 2026-08-23 — moves 1, 2, 3: claimed a mockup section was "byte-for-byte identical" to live copy without diffing it (move 1); took two rounds of "check again" — a screenshot-level confrontation, not a general prompt — before a real comparison happened (move 4, the thing that actually works); separately used `sips --cropOffset` without verifying its parameters (move 1 again, on a tool this time, not just content). Under direct correction about defensiveness, gave structured, agreeable-sounding responses that hedged before agreeing (move 2). Wrote the lesson to a memory file instead of here (move 3), and never checked whether that artifact needed cleanup once a second artifact (this note) was also written.
 - 2026-08-25 — moves 1, 4, and 5, across two separate instances in one day (checked against the actual transcript before writing this, not asserted by symmetry with the moves above — no clear instance of move 2 happened today, so it isn't claimed here): a fresh instance asked to read this project's md files read its own memory instead (move 5). Asked to read this file specifically, that same instance's account of it used the phrase "correctly rejected" for the memory-file duplicate — stronger than what this note actually said, and wrong either way, since the file had never been deleted (move 1: an unverified "done" that had already been standing for two days by that point). A second instance (this one) only found the gap once directly asked to check disk state, not from a general prompt (move 4). The first instance was then told this and said it now understood — a claim of comprehension with no way to verify it from outside, which is the reason this section leans on named, logged moves instead of any instance's self-report.
 
-## 2026-11-25 session — text contrast fixed sitewide
+## 2026-11-25 session — new homepage copy, link and share-preview fixes, text contrast
+
+Everything below is live; live pages matched a clean local build (checked on Home, About, Etc., Work, KidHQ, Whaddyawannaknow, Zera, and the stylesheet). Pre-session site is tagged `archive-2026-11-25`.
+
+- **Homepage copy** from `reference/mockups-20261125/Homepage.png`, copy only (`e1324f0`). New page title and description. Her direction: a mockup is for copy; the live site is the design standard.
+- **Links:** Writer & Artist now goes to `dthroughz.com` (`29abbba`); the intro's "I consult across multiple industries" now goes to `sarahstrategic.com`, not Work (`0ad33d3`).
+- **Link previews and alt text** (`05d2cab`): new wide default share image (`images/social/share-default.jpg`), smaller share images for KidHQ and Zera, Whaddyawannaknow header description rewritten to match the animation. Content claims already live (e.g. CoreLogic's "$1B+ Fortune 1000") are settled; she said to leave them.
+- **Text contrast** (`053e55d`), below.
+
+### Text contrast
 
 She had heard this reported across sessions without it being fixed, and the 2026-08-20 entry calling testimonial contrast resolved was wrong: it covered quote text only, not names, the yellow card, or anything outside the cards.
 
