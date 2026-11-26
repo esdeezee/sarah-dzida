@@ -107,7 +107,7 @@ Everything else in v4's type table (H3, lede, body, pull quote, meta/eyebrow, su
 
 ## 1.7 Borders & focus `[INHERITED mechanism, NEW colors]`
 
-Focus treatment is identical to v4 §1.7 — one treatment, every control, `--red-dark` ring, never removed without replacement. `prefers-reduced-motion` respected on any transition (testimonial-card carousel fade, hover states).
+Focus treatment, every control: 3px outline, 2px offset, `--teal` on light grounds and `--yellow` inside the teal header (updated 2026-11-25), never removed without replacement. `prefers-reduced-motion` respected on any transition (testimonial-card carousel fade, hover states).
 
 **Framed-panel border:** yellow, `24px` desktop / `16px` below 900 — same values as v4's framed-panel border, reused directly for the "Choose an Adventure" outer container. Confirmed this is a literal reuse of the `.framed` component from v4, stacked three times with different ground colors and content per instance — not a new component built from scratch.
 

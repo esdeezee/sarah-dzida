@@ -33,6 +33,8 @@ Everything below is live; live pages matched a clean local build (checked on Hom
 - **Links:** Writer & Artist now goes to `dthroughz.com` (`29abbba`); the intro's "I consult across multiple industries" now goes to `sarahstrategic.com`, not Work (`0ad33d3`).
 - **Link previews and alt text** (`05d2cab`): new wide default share image (`images/social/share-default.jpg`), smaller share images for KidHQ and Zera, Whaddyawannaknow header description rewritten to match the animation. Content claims already live (e.g. CoreLogic's "$1B+ Fortune 1000") are settled; she said to leave them.
 - **Text contrast** (`053e55d`), below.
+- **Focus outline:** teal on light areas, yellow in the teal header; checked on the visible links and buttons of all 12 pages at 1440px. Quote-card arrow color on narrow screens is still in `BACKLOG.md`.
+- **Explaining it went badly:** several rounds of jargon and rewording before showing a large labeled picture, which got the decision at once. Should have re-derived after the second "I don't understand."
 
 ### Text contrast
 

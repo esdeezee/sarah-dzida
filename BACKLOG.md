@@ -2,9 +2,9 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-11-25.
 
-## Keyboard focus ring is hard to see on white (found 2026-11-25, not fixed)
+## Quote-card arrows on narrow screens turn yellow on white (found 2026-11-25)
 
-The sitewide `:focus-visible` outline is yellow, about 1.6:1 against white; the accessibility minimum is 3:1. The mobile quote-card arrows also turn yellow on hover and focus. This is a defect in my build. The fix changes how focus looks, so it needs your OK. The design-system doc says the ring should be `--red-dark`, which is not what shipped.
+Fix: change `.testimonial-arrow:hover` and `:focus-visible` color from `--color-yellow` to `--color-teal`. Needs your OK. (The sitewide focus ring is already fixed: teal on light areas, yellow in the header.)
 
 ## Stray file: not committed, sitting on disk
 
