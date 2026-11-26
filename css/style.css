@@ -62,6 +62,7 @@
   --color-hairline: color-mix(in srgb, var(--color-ink) 15%, white);
   --hero-bg: color-mix(in srgb, var(--color-teal) 45%, white);
   --olive-text: #6e7556;
+  --teal-text: color-mix(in srgb, var(--color-teal) 80%, black); /* teal text on --hero-bg */
 
   --font-display: "Raleway", sans-serif;
   --font-body: "Open Sans", sans-serif;
@@ -392,7 +393,7 @@ ul {
 .hero__intro-label {
   font-family: var(--font-body);
   font-weight: 700;
-  color: var(--color-teal);
+  color: var(--teal-text);
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
@@ -409,7 +410,7 @@ ul {
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.1rem;
-  color: var(--color-teal);
+  color: var(--teal-text);
   padding-top: clamp(30px, 5vw, 56px);
   padding-bottom: 16px;
   margin: 0;
@@ -473,6 +474,7 @@ ul {
   display: inline-block;
   font-family: var(--font-display);
   font-weight: 700;
+  font-size: 1.2rem; /* large text: coral on white only passes AA at this size/weight */
   margin: 4px 0 28px;
   text-decoration: none;
   border-bottom: 2px solid currentColor;
@@ -515,15 +517,15 @@ ul {
 .testimonial p {
   font-weight: 700;
   font-size: 1.2rem;
-  margin-bottom: 1.6em;
+  margin-bottom: 0.8em; /* minimum gap only; cite is pinned to the card bottom */
 }
 
 .testimonial cite {
   margin-top: auto;
   font-style: normal;
-  font-weight: 600;
-  font-size: 0.9rem;
-  opacity: 0.9;
+  font-weight: 700;
+  font-size: 1.2rem; /* large text, same as the quote: needed on the coral card */
+  line-height: 1.35;
 }
 
 .testimonial--red {
@@ -540,6 +542,7 @@ ul {
 }
 .testimonial--yellow {
   background: var(--color-yellow);
+  /* White text kept on purpose: accepted contrast exception (1.63:1). */
 }
 
 .testimonial-carousel {
@@ -1026,8 +1029,8 @@ video.case-hero__media {
 
 .awards__label {
   font-family: var(--font-body);
-  font-size: 1rem;
-  font-weight: 600;
+  font-size: 1.2rem; /* large text: coral on white only passes AA at this size/weight */
+  font-weight: 700;
   color: var(--color-coral);
 }
 

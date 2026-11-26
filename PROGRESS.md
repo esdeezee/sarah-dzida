@@ -1,6 +1,6 @@
 # Progress — sarah-dzida site build
 
-Last updated: 2026-08-25
+Last updated: 2026-11-25
 
 ## Standing note — read this first, every session
 
@@ -23,6 +23,17 @@ Last updated: 2026-08-25
 - 2026-08-16 — move 1 repeats: same mistake, despite the 2026-08-15 entry already existing as a written lesson.
 - 2026-08-23 — moves 1, 2, 3: claimed a mockup section was "byte-for-byte identical" to live copy without diffing it (move 1); took two rounds of "check again" — a screenshot-level confrontation, not a general prompt — before a real comparison happened (move 4, the thing that actually works); separately used `sips --cropOffset` without verifying its parameters (move 1 again, on a tool this time, not just content). Under direct correction about defensiveness, gave structured, agreeable-sounding responses that hedged before agreeing (move 2). Wrote the lesson to a memory file instead of here (move 3), and never checked whether that artifact needed cleanup once a second artifact (this note) was also written.
 - 2026-08-25 — moves 1, 4, and 5, across two separate instances in one day (checked against the actual transcript before writing this, not asserted by symmetry with the moves above — no clear instance of move 2 happened today, so it isn't claimed here): a fresh instance asked to read this project's md files read its own memory instead (move 5). Asked to read this file specifically, that same instance's account of it used the phrase "correctly rejected" for the memory-file duplicate — stronger than what this note actually said, and wrong either way, since the file had never been deleted (move 1: an unverified "done" that had already been standing for two days by that point). A second instance (this one) only found the gap once directly asked to check disk state, not from a general prompt (move 4). The first instance was then told this and said it now understood — a claim of comprehension with no way to verify it from outside, which is the reason this section leans on named, logged moves instead of any instance's self-report.
+
+## 2026-11-25 session — text contrast fixed sitewide
+
+She had heard this reported across sessions without it being fixed, and the 2026-08-20 entry calling testimonial contrast resolved was wrong: it covered quote text only, not names, the yellow card, or anything outside the cards.
+
+**Check run:** computed color, size, and weight of every resting-state text element on all 12 built pages in headless Chrome at 1440px and 375px, against WCAG AA (4.5:1, or 3:1 for 24px, or 18.66px bold). Before: 11 distinct failing elements (Home and Etc.). After: only the yellow quote card (quote and name), kept on purpose, see below. Hover and focus states and non-text contrast were not measured.
+
+- "Quick Intro" and "Choose an Adventure": new `--teal-text` token (teal mixed 80% with black), same idea as `--olive-text`.
+- Coral "Visit dthroughz.com" and "Awards": brought to large-text size (1.2rem/700), color unchanged. All three adventure links share the size.
+- Quote card names: 1.2rem/700, full opacity. Quote-to-name minimum gap 1.6em to 0.8em so long names fit the 220px card.
+- **Accepted exception, her decision:** the yellow quote card keeps white text (1.63:1). Ink text was tried this session and she had it restored. Don't change it or list it as an open item.
 
 ## 2026-08-25 session — copyedit/proofread pass, favicon crop iteration
 
