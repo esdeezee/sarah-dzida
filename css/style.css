@@ -1144,7 +1144,7 @@ video.case-hero__media {
 
   .testimonial-arrow:hover,
   .testimonial-arrow:focus-visible {
-    color: var(--color-yellow);
+    color: var(--color-teal);
   }
 
   .testimonials {

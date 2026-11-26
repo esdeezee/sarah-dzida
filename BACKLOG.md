@@ -2,10 +2,6 @@
 
 Open items that need your judgment, not mine. Bugs I could just fix are already fixed and aren't listed here — this is only the stuff that's your call. Updated 2026-11-25.
 
-## Quote-card arrows on narrow screens turn yellow on white (found 2026-11-25)
-
-Fix: change `.testimonial-arrow:hover` and `:focus-visible` color from `--color-yellow` to `--color-teal`. Needs your OK. (The sitewide focus ring is already fixed: teal on light areas, yellow in the header.)
-
 ## Stray file: not committed, sitting on disk
 
 `images/case-studies/corelogic/Screenshot 2023-05-25 at 18-56-32 Homepage.png` — a default macOS screenshot filename, unreferenced anywhere in the site. Left out of every commit this session since it looks like accidental leftover, not intentional source material. Still sitting there untracked — delete it, rename and use it, or tell me to leave it alone.
